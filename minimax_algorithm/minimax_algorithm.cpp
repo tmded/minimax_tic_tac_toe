@@ -12,7 +12,7 @@ int minimax_evaluate(std::function<int(std::vector<char> square,char team)> chec
 
 void dump_message(std::string message){
     std::ofstream outfile;
-    outfile.open("test.txt", std::ios_base::app);
+    outfile.open("dumped_values.txt", std::ios_base::app);
     outfile << message;
 }
 
@@ -33,7 +33,7 @@ int choice_minimax(std::function<int(std::vector<char> square,char team)> checkw
         dump_message(std::to_string(choices_values[i])+ " ");
         if (choices_values[i] >= choices_values[choice-1])
             choice = i+1;}
-    dump_message("...");
+    dump_message(" | ");
     return choice;
 }
 

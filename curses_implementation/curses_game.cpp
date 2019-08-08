@@ -9,6 +9,7 @@
 #include <iostream>
 #include <curses.h>
 #include <unistd.h>
+#include <fstream>
 
 int main_game_curses();
 int checkwin_curses(std::vector<char> square,char team);
@@ -21,6 +22,9 @@ curses_wrapper curses;
 
 int main_game_curses()
 {
+    std::ofstream outfile;
+    outfile.open("dumped_values.txt");
+    outfile << "";
     int ai_player =1;
     int player = 1;
     int choice;
